@@ -40,6 +40,7 @@ namespace BusinessLayer.Concrete
         {
             return _categorydal.Get(x => x.CategoryID == id);
         }
+       
 
         public List<Category> GetList()
         {

@@ -31,7 +31,7 @@ namespace DataAccessLayer.Concrete.Repositories
             //bir dizide veya listede sadece 1 değer döndrmek
             //için kullanılan entity framework linq metodudur.
         }
-
+        
         public void Insert(T p)
         {
             _object.Add(p);
@@ -47,6 +47,7 @@ namespace DataAccessLayer.Concrete.Repositories
         {
             return _object.Where(filter).ToList();
         }
+      
 
         public void Update(T p)
         {

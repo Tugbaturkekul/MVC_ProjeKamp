@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<div class="container">
+    <h1 class="text-center">İstatistik </h1>
+    <div class="row flex-row justify-content-between flex-wrap">
+        <div class="card bg-success " style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title ">Toplam Kategori Sayısı</h5>
+                <p class="card-text">@ViewBag.KategoriToplam</p>
+            </div>
+        </div>
+        <div class="card bg-primary" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title"> Başlık tablosunda "yazılım" kategorisine ait başlık sayısı</h5>
+                <p class="card-text">@ViewBag.YazilimBaslikSayisi</p>
+            </div>
+        </div>
+        <div class="card bg-warning" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title"> Yazar adında 'a' harfi geçen yazar sayısı</h5>
+                <p class="card-text">@ViewBag.YazarSayisi</p>
+            </div>
+        </div>
+        <div class="card bg-danger" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title"> En fazla başlığa sahip kategori adı</h5>
+                <p class="card-text">@ViewBag.MaxBaslikKategori</p>
+            </div>
+        </div>
+        <div class="card bg-secondary" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title"> Durumu true olan kategoriler ile false olanların farkı</h5>
+                <p class="card-text">@ViewBag.Fark</p>
+            </div>
+        </div>
+        <div class="card bg-info" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title"> İtiraf Günlükleri: Sorgular MSSQL de yazılıp ChatGPT ile linq ya çevrildi. </h5>
+                <p class="card-text"></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
