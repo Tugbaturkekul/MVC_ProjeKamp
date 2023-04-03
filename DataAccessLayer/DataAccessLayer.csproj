@@ -74,6 +74,22 @@
     <Compile Include="Migrations\202303310735504_mig11.designer.cs">
       <DependentUpon>202303310735504_mig11.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202304010641130_mig_writer_edit.cs" />
+    <Compile Include="Migrations\202304010641130_mig_writer_edit.designer.cs">
+      <DependentUpon>202304010641130_mig_writer_edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304010739098_mig_writer_edit2.cs" />
+    <Compile Include="Migrations\202304010739098_mig_writer_edit2.designer.cs">
+      <DependentUpon>202304010739098_mig_writer_edit2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304010827252_edit_writer_addtitle.cs" />
+    <Compile Include="Migrations\202304010827252_edit_writer_addtitle.designer.cs">
+      <DependentUpon>202304010827252_edit_writer_addtitle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304020700207_mig_imagesizechange.cs" />
+    <Compile Include="Migrations\202304020700207_mig_imagesizechange.designer.cs">
+      <DependentUpon>202304020700207_mig_imagesizechange.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -93,6 +109,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202303310735504_mig11.resx">
       <DependentUpon>202303310735504_mig11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304010641130_mig_writer_edit.resx">
+      <DependentUpon>202304010641130_mig_writer_edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304010739098_mig_writer_edit2.resx">
+      <DependentUpon>202304010739098_mig_writer_edit2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304010827252_edit_writer_addtitle.resx">
+      <DependentUpon>202304010827252_edit_writer_addtitle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304020700207_mig_imagesizechange.resx">
+      <DependentUpon>202304020700207_mig_imagesizechange.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
