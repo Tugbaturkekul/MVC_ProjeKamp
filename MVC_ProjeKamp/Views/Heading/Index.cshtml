@@ -4,7 +4,9 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-@{ string color = "";}
+@{  string color = "";
+    string colorSilButon = "";
+    string durumSilButon = "";}
 @*<h2>Index</h2>
     <br />
     <table class="table table-bordered">
@@ -66,7 +68,7 @@
                             <th style="width: 20%">
                                 Başlık Adı
                             </th>
-                            <th style="width: 15%">
+                            <th style="width: 10%">
                                 Oluşturan Yazar
                             </th>
                             <th style="width: 10%">
@@ -81,6 +83,7 @@
                         </tr>
                     </thead>
                     <tbody>
+                      
                         @foreach (var item in Model)
                         {
                             if (item.Category.CategoryName == "Tiyatro")
@@ -106,6 +109,18 @@
                             if (item.Category.CategoryName == "Dizi")
                             {
                                 color = "badge badge-danger";
+                            }
+                            if (item.HeadingStatus == false)
+                            {
+                                durumSilButon = "Aktif Yap";
+                                colorSilButon = "btn btn-secondary";
+
+                            }
+                            else
+                            {
+                                durumSilButon = "Pasif Yap";
+                                colorSilButon = "btn btn-danger";
+
                             }
                             <tr>
                                 <td>
@@ -144,10 +159,10 @@
                                         </i>
                                         Düzenle
                                     </a>
-                                    <a class="btn btn-danger btn-sm" href="/Heading/DeleteHeading/@item.HeadingID">
+                                    <a class="@colorSilButon btn-sm" href="/Heading/DeleteHeading/@item.HeadingID">
                                         <i class="fas fa-trash">
                                         </i>
-                                        Sil
+                                        @durumSilButon
                                     </a>
                                 </td>
                             </tr>
