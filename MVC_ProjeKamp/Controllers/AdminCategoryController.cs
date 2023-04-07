@@ -14,6 +14,8 @@ namespace MVC_ProjeKamp.Controllers
     public class AdminCategoryController : Controller
     {
         CategoryManager cm = new CategoryManager(new EfCategoryDal()); //video 36 1:07
+
+        [Authorize(Roles="B")]
         public ActionResult Index()
         {
             var categoryvalues = cm.GetList();

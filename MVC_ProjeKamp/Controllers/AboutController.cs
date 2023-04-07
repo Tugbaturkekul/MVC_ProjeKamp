@@ -28,5 +28,9 @@ namespace MVC_ProjeKamp.Controllers
             abm.AboutAddBL(p);
             return RedirectToAction("Index");
         }
+        public PartialViewResult AboutPartial()
+        {
+            return PartialView();
+        }
     }
 }
