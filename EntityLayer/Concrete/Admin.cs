@@ -13,13 +13,7 @@ namespace EntityLayer.Concrete
         public int AdminID { get; set; }
         [StringLength(50)]
         public string AdminUserName { get; set; }
-
-        [Required]
-        [MaxLength(128)]
-        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-        public string AdminPasswordHash { get; set; }
-
-        [NotMapped]
+        [StringLength(50)]
         public string AdminPassword { get; set; }
         [StringLength(1)]
         public string AdminRole { get; set; }

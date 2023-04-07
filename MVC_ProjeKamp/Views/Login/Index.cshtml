@@ -2,6 +2,12 @@
 @{
     Layout = null;
 }
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <script>alert('@TempData["ErrorMessage"]')</script>
+}
+
 <!doctype html>
 <html lang="en">
 <head>
