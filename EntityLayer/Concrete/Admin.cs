@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +13,13 @@ namespace EntityLayer.Concrete
         public int AdminID { get; set; }
         [StringLength(50)]
         public string AdminUserName { get; set; }
-        [StringLength(50)]
+
+        [Required]
+        [MaxLength(128)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+        public string AdminPasswordHash { get; set; }
+
+        [NotMapped]
         public string AdminPassword { get; set; }
         [StringLength(1)]
         public string AdminRole { get; set; }

@@ -122,6 +122,10 @@
     <Compile Include="Migrations\202304070614577_mig_addedAdminTable.designer.cs">
       <DependentUpon>202304070614577_mig_addedAdminTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202304070836279_mig_addedHash.cs" />
+    <Compile Include="Migrations\202304070836279_mig_addedHash.designer.cs">
+      <DependentUpon>202304070836279_mig_addedHash.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -174,6 +178,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202304070614577_mig_addedAdminTable.resx">
       <DependentUpon>202304070614577_mig_addedAdminTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304070836279_mig_addedHash.resx">
+      <DependentUpon>202304070836279_mig_addedHash.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
