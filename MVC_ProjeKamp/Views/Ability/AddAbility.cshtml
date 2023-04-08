@@ -1,0 +1,24 @@
+﻿@model EntityLayer.Concrete.Ability
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AbilityLayout.cshtml";
+}
+
+<h3>Yeni Yetenek Ekle</h3>
+<br />
+@using (Html.BeginForm("AddAbility", "Ability", FormMethod.Post))
+//action,controller,method -alttaki kısım nerede ne zaman işlem gerçekleştirecek
+{
+    <div class="form-group">
+        @Html.Label("Yetenek Adı")
+        @Html.TextBoxFor(x => x.AbilityName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.AbilityName)
+        <br /><br />
+        @Html.Label("Yetenek Değeri")
+        @Html.TextBoxFor(x => x.AbilityValue, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.AbilityValue)
+        <br /><br />
+        <button class="btn btn-secondary">Ekle</button>
+
+    </div>
+}
