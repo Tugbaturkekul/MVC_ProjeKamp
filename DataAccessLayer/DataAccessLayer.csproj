@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IAbilityDal.cs" />
     <Compile Include="Abstract\IAboutDal.cs" />
     <Compile Include="Abstract\ICategoryDal.cs" />
     <Compile Include="Abstract\IContactDal.cs" />
@@ -62,6 +63,7 @@
     <Compile Include="Abstract\IWriterDal.cs" />
     <Compile Include="Concrete\Context.cs" />
     <Compile Include="Concrete\Repositories\GenericRepository.cs" />
+    <Compile Include="EntityFramework\EfAbilityDal.cs" />
     <Compile Include="EntityFramework\EfAboutDal.cs" />
     <Compile Include="EntityFramework\EfCategoryDal.cs" />
     <Compile Include="EntityFramework\EfContactDal.cs" />
@@ -126,6 +128,10 @@
     <Compile Include="Migrations\202304070923263_mig_hashsorunoldusildim.designer.cs">
       <DependentUpon>202304070923263_mig_hashsorunoldusildim.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202304071857095_mig_addedability.cs" />
+    <Compile Include="Migrations\202304071857095_mig_addedability.designer.cs">
+      <DependentUpon>202304071857095_mig_addedability.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -181,6 +187,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202304070923263_mig_hashsorunoldusildim.resx">
       <DependentUpon>202304070923263_mig_hashsorunoldusildim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304071857095_mig_addedability.resx">
+      <DependentUpon>202304071857095_mig_addedability.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

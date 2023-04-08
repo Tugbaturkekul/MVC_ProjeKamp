@@ -1,0 +1,20 @@
+﻿@using EntityLayer.Concrete
+@model List<Ability>
+
+@{
+       ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AbilityLayout.cshtml";
+}
+@using (Html.BeginForm("AddAbility", "Ability", FormMethod.Get))
+{
+<div class="col-md-12 skills-right bar_group">
+    @foreach (var item in Model)
+                    {
+    <div class='bar_group__bar thin' label='@item.AbilityName &nbsp;&nbsp; @item.AbilityValue%' value='@item.AbilityValue'></div>
+    }
+</div>
+<button class="btn btn-secondary">Yeni Yetenek Ekle</button>
+}
+<script src="/AdminLTE-3.0.4/web/js/bars.js"></script>
+
+
