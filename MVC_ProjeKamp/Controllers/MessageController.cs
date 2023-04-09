@@ -13,19 +13,21 @@ namespace MVC_ProjeKamp.Controllers
 {
     public class MessageController : Controller
     {
-        MessageManager mm= new MessageManager(new EfMessageDal());
+        MessageManager mm = new MessageManager(new EfMessageDal());
         MessageValidator messageValidator = new MessageValidator();
-       
+
         [Authorize]
         public ActionResult Inbox()
         {
-
-            var messagelist = mm.GetListInbox();
+            string adminUserName = (string)Session["AdminUserName"];
+            var messagelist = mm.GetListInbox(adminUserName);
             return View(messagelist);
         }
-        public ActionResult Sendbox()
+        [Authorize]
+        public ActionResult Sendbox(string p)
         {
-            var messagelist = mm.GetListSendbox();
+            string adminUserName = (string)Session["AdminUserName"];
+            var messagelist = mm.GetListSendbox(adminUserName);
             return View(messagelist);
         }
 

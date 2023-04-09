@@ -17,7 +17,7 @@ namespace MVC_ProjeKamp.Controllers
         ContactValidator cv = new ContactValidator();
         public ActionResult Index()
         {
-           
+
             var contactvalues = cm.GetList();
             return View(contactvalues);
         }

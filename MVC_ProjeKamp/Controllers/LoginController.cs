@@ -3,8 +3,6 @@ using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-//using System.Security.Cryptography;
-//using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
@@ -13,22 +11,6 @@ namespace MVC_ProjeKamp.Controllers
 {
     public class LoginController : Controller
     {
-      /*  private string GetHash(string value)
-        {
-            using (SHA256 hash = SHA256.Create())
-            {
-                byte[] result = hash.ComputeHash(Encoding.UTF8.GetBytes(value));
-
-                StringBuilder sb = new StringBuilder();
-
-                for (int i = 0; i < result.Length; i++)
-                {
-                    sb.Append(result[i].ToString("x2"));
-                }
-
-                return sb.ToString();
-            }
-        }*/
         [HttpGet]
         public ActionResult Index()
         {
