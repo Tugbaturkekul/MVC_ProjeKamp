@@ -27,7 +27,10 @@ namespace BusinessLayer.Concrete
         {
             return _messageDal.List(x => x.ReceiverMail == p);
         }
-
+        public int GelenMesajSayisi(string p)
+        {
+            return _messageDal.List(x => x.ReceiverMail == p).Count;
+        }
         public List<Message> GetListSendbox(string p)
         {
             return _messageDal.List(x => x.SenderMail == p );
