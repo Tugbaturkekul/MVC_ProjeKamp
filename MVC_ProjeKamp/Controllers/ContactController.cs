@@ -12,9 +12,8 @@ namespace MVC_ProjeKamp.Controllers
 {
     public class ContactController : Controller
     {
-     
+        Context c = new Context();
         ContactManager cm = new ContactManager(new EfContactDal());
-       MessageManager mm = new MessageManager(new EfMessageDal());
         ContactValidator cv = new ContactValidator();
         public ActionResult Index()
         {
@@ -29,9 +28,11 @@ namespace MVC_ProjeKamp.Controllers
         }
         public PartialViewResult ContactPartial()
         {
-            ViewBag.AdminGelenMesajSayisi = cm.GetList().Count;
-            string adminUserName = (string)Session["AdminUserName"];
-            ViewBag.GelenMesajSayisi = mm.OkunmamisGelenMesajSayisi(adminUserName);    
+            int totalAdminMessageCount = c.Contacts.Count();
+            ViewBag.AdminGelenMesajSayisi = totalAdminMessageCount;
+            int totalInboxMessageCount = c.Messages.Count();
+            ViewBag.GelenMesajSayisi = totalInboxMessageCount;
+
             return PartialView();
         }
     }

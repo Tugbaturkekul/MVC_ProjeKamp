@@ -4,7 +4,7 @@
     ViewBag.Title = "Inbox";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-@{ string color = ""; }
+
 <html>
 
 <body class="hold-transition sidebar-mini">
@@ -70,17 +70,18 @@
                                 <tbody>
                                     @foreach (var item in Model)
                                     {
-                                        color = (!item.IsRead) ? "warning" : "capitalize";
-
                                         <tr>
                                             <td>
-                                                <a class="btn btn-default btn-sm" href="/Message/IsRead/@item.MessageID"><i class="fas fa-mail-bulk text-@color"></i></a>
+                                                <div class="icheck-primary">
+                                                    <input type="checkbox" value="" id="check1">
+                                                    <label for="check1"></label>
+                                                </div>
                                             </td>
-                                            <td class="mailbox-star"><a href="/Message/GetInboxMessageDetail/@item.MessageID"><i class="fas fa-star text-muted"></i></a></td>
+                                            <td class="mailbox-star"><a href="/Message/GetInboxMessageDetail/@item.MessageID"><i class="fas fa-star text-warning"></i></a></td>
                                             <td class="mailbox-name"><a href="/Message/GetInboxMessageDetail/@item.MessageID">@item.SenderMail</a></td>
                                             <td class="mailbox-subject">
                                                 <b>@item.Subject</b> -
-                                                @if (item.MessageContent.Length > 30)
+                                                @if (item.MessageContent.Length>30)
                                                 {
                                                     @item.MessageContent.Substring(0, 30)
                                                 }
@@ -88,11 +89,9 @@
                                                 {
                                                     @item.MessageContent
                                                 }
-
+                                                ...
                                             </td>
-                                            <td class="mailbox-attachment">
-                                               
-                                            </td>
+                                            <td class="mailbox-attachment"></td>
                                             <td class="mailbox-date">  @(((DateTime)item.MessageDate).ToString("dd-MMM-yyyy"))</td>
                                         </tr>
                                     }
