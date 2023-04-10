@@ -28,10 +28,8 @@ namespace MVC_ProjeKamp.Controllers
         }
         public PartialViewResult ContactPartial()
         {
-            int totalAdminMessageCount = c.Contacts.Count();
-            ViewBag.AdminGelenMesajSayisi = totalAdminMessageCount;
-            int totalInboxMessageCount = c.Messages.Count();
-            ViewBag.GelenMesajSayisi = totalInboxMessageCount;
+            ViewBag.ContactCount = cm.GetList().Count;
+           
 
             return PartialView();
         }
