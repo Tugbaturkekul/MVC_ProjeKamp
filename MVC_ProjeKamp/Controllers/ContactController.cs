@@ -31,7 +31,7 @@ namespace MVC_ProjeKamp.Controllers
         {
             ViewBag.AdminGelenMesajSayisi = cm.GetList().Count;
             string adminUserName = (string)Session["AdminUserName"];
-            ViewBag.GelenMesajSayisi = mm.GelenMesajSayisi(adminUserName);    
+            ViewBag.GelenMesajSayisi = mm.OkunmamisGelenMesajSayisi(adminUserName);    
             return PartialView();
         }
     }

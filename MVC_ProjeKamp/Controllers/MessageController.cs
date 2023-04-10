@@ -34,7 +34,14 @@ namespace MVC_ProjeKamp.Controllers
         public ActionResult GetInboxMessageDetail(int id)
         {
             var values = mm.GetByID(id);
+            //view görüntülendiyse mesaj okunmuştur
+            if (!values.IsRead)
+            {
+                values.IsRead = true;
+                mm.MessageUpdate(values);
+            }
             return View(values);
+          
         }
         public ActionResult GetSendboxMessageDetail(int id)
         {
@@ -65,6 +72,21 @@ namespace MVC_ProjeKamp.Controllers
                 }
             }
             return View();
+        }
+        public ActionResult IsRead(int id) 
+        {
+            var messageValue = mm.GetByID(id);
+
+            if (messageValue.IsRead)
+            {
+                messageValue.IsRead = false;
+            }
+            else
+            {
+                messageValue.IsRead = true;
+            }
+            mm.MessageUpdate(messageValue);
+            return RedirectToAction("Inbox");
         }
     }
 }

@@ -15,6 +15,6 @@ namespace BusinessLayer.Abstract
         Message GetByID(int id);
         void MessageDelete(Message message);
         void MessageUpdate(Message message);
-        int GelenMesajSayisi(string p);
+        int OkunmamisGelenMesajSayisi(string p);
     }
 }

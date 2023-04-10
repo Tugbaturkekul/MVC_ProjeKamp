@@ -27,9 +27,9 @@ namespace BusinessLayer.Concrete
         {
             return _messageDal.List(x => x.ReceiverMail == p);
         }
-        public int GelenMesajSayisi(string p)
+        public int OkunmamisGelenMesajSayisi(string p)
         {
-            return _messageDal.List(x => x.ReceiverMail == p).Count;
+            return _messageDal.List(x => x.ReceiverMail == p && !x.IsRead).Count;
         }
         public List<Message> GetListSendbox(string p)
         {
@@ -43,12 +43,12 @@ namespace BusinessLayer.Concrete
 
         public void MessageDelete(Message message)
         {
-            throw new NotImplementedException();
+            _messageDal.Delete(message);
         }
 
         public void MessageUpdate(Message message)
         {
-            throw new NotImplementedException();
+            _messageDal.Update(message);
         }
     }
 }

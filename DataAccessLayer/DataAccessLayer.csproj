@@ -140,6 +140,10 @@
     <Compile Include="Migrations\202304090842090_mig_messageIsread.designer.cs">
       <DependentUpon>202304090842090_mig_messageIsread.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202304090942539_isread_added.cs" />
+    <Compile Include="Migrations\202304090942539_isread_added.designer.cs">
+      <DependentUpon>202304090942539_isread_added.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -204,6 +208,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202304090842090_mig_messageIsread.resx">
       <DependentUpon>202304090842090_mig_messageIsread.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304090942539_isread_added.resx">
+      <DependentUpon>202304090942539_isread_added.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
