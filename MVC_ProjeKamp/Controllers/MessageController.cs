@@ -19,19 +19,25 @@ namespace MVC_ProjeKamp.Controllers
         [Authorize]
         public ActionResult Inbox()
         {
-
-            var messagelist = mm.GetListInbox();
+            string adminusername = (string)Session["AdminUserName"];
+            var messagelist = mm.GetListInbox(adminusername);
             return View(messagelist);
         }
-        public ActionResult Sendbox()
+        public ActionResult Sendbox(string p)
         {
-            var messagelist = mm.GetListSendbox();
+            var messagelist = mm.GetListSendbox(p);
             return View(messagelist);
         }
 
         public ActionResult GetInboxMessageDetail(int id)
         {
+            
             var values = mm.GetByID(id);
+            if(!values.IsRead)
+            {
+                values.IsRead = true;
+                mm.MessageUpdate(values);
+            }
             return View(values);
         }
         public ActionResult GetSendboxMessageDetail(int id)
@@ -63,6 +69,17 @@ namespace MVC_ProjeKamp.Controllers
                 }
             }
             return View();
+        }
+        public ActionResult IsRead(int id)
+        {
+            //okundu butonunu true/false yaparak vt a kaydeder
+            var messagevalue = mm.GetByID(id);
+            if (messagevalue.IsRead)
+                messagevalue.IsRead = false;
+            else
+                messagevalue.IsRead = true;
+            mm.MessageUpdate(messagevalue);
+            return RedirectToAction("Inbox");
         }
     }
 }

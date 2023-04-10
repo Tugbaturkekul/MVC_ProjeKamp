@@ -4,7 +4,7 @@
     ViewBag.Title = "Inbox";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-
+@{ string renk = "";}
 <html>
 
 <body class="hold-transition sidebar-mini">
@@ -70,6 +70,7 @@
                                 <tbody>
                                     @foreach (var item in Model)
                                     {
+                                        renk = (!item.IsRead) ? "warning" : "capitalize";
                                         <tr>
                                             <td>
                                                 <div class="icheck-primary">
@@ -91,7 +92,9 @@
                                                 }
                                                 ...
                                             </td>
-                                            <td class="mailbox-attachment"></td>
+                                            <td class="mailbox-attachment">
+                                                <a class="btn btn-default btn-sm" href="/Message/IsRead/@item.MessageID" ><i class="fas fa-mail-bulk text-@renk"></i></a>
+                                            </td>
                                             <td class="mailbox-date">  @(((DateTime)item.MessageDate).ToString("dd-MMM-yyyy"))</td>
                                         </tr>
                                     }
