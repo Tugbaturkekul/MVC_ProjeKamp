@@ -1,10 +1,12 @@
 ﻿@using EntityLayer.Concrete
 @model List<Heading>
+
+
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
 }
-@{  string color = "";
+@{ string color = "";
     string colorSilButon = "";
     string durumSilButon = "";}
 
@@ -52,10 +54,7 @@
                             <th style="width: 10%">
                                 Oluşturan Yazar
                             </th>
-                            <th style="width: 10%">
-                                Durum
-                            </th>
-
+                           
                             <th style="width: 8%" class="text-center">
                                 Kategori
                             </th>
@@ -64,7 +63,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                      
+
                         @foreach (var item in Model)
                         {
                             if (item.Category.CategoryName == "Tiyatro")
@@ -123,9 +122,7 @@
                                         </li>
                                     </ul>
                                 </td>
-                                <td>
-                                    @item.HeadingStatus
-                                </td>
+                             
                                 <td class="project-state">
                                     <span class="@color">@item.Category.CategoryName</span>
                                 </td>
@@ -135,7 +132,7 @@
                                         </i>
                                         Yazılar
                                     </a>
-                                    <a class="btn btn-info btn-sm" href="/Heading/EditHeading/@item.HeadingID">
+                                    <a class="btn btn-info btn-sm" href="/WriterPanel/EditHeading/@item.HeadingID">
                                         <i class="fas fa-pencil-alt">
                                         </i>
                                         Düzenle
@@ -159,4 +156,4 @@
 
 </body>
 </html>
-<a href="/Heading/AddHeading" class="btn btn-primary">Yeni Başlık Giriş</a>
+<a href="/WriterPanel/NewHeading" class="btn btn-primary">Yeni Başlık Giriş</a>

@@ -14,6 +14,7 @@ namespace MVC_ProjeKamp.Controllers
     {
         Context c = new Context();
         ContactManager cm = new ContactManager(new EfContactDal());
+        MessageManager mm = new MessageManager(new EfMessageDal());
         ContactValidator cv = new ContactValidator();
         public ActionResult Index()
         {
@@ -29,8 +30,8 @@ namespace MVC_ProjeKamp.Controllers
         public PartialViewResult ContactPartial()
         {
             ViewBag.ContactCount = cm.GetList().Count;
-           
-
+            string adminUserName = (string)Session["AdminUserName"];
+            ViewBag.InboxUnReadMessageCount = mm.GetCountUnreadMessage(adminUserName);
             return PartialView();
         }
     }
