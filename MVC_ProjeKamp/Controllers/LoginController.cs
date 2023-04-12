@@ -9,8 +9,9 @@ using System.Web.Security;
 
 namespace MVC_ProjeKamp.Controllers
 {
+    [AllowAnonymous]
     public class LoginController : Controller
-    {
+    {   
         [HttpGet]
         public ActionResult Index()
         {
