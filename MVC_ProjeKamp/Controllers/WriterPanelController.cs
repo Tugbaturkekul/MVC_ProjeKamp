@@ -19,7 +19,7 @@ namespace MVC_ProjeKamp.Controllers
         }
         public ActionResult MyHeading()
         {
-         
+
             var values = hm.GetListByWriter();
             return View(values);
         }
@@ -67,6 +67,14 @@ namespace MVC_ProjeKamp.Controllers
         public ActionResult EditHeading(Heading p)
         {
             hm.HeadingUpdate(p);
+            return RedirectToAction("MyHeading");
+        }
+        public ActionResult DeleteHeading(int id)
+        {
+            var headingvalue = hm.GetByID(id);
+            headingvalue.HeadingStatus = false;
+
+            hm.HeadingDelete(headingvalue);
             return RedirectToAction("MyHeading");
         }
     }
