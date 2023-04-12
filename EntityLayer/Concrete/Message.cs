@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace EntityLayer.Concrete
 {
     public class Message
@@ -17,6 +18,7 @@ namespace EntityLayer.Concrete
         public string ReceiverMail { get; set; }
         [StringLength(100)]
         public string Subject { get; set; }
+      
         public string MessageContent { get; set; }
         public DateTime MessageDate { get; set; }
         public bool IsRead { get; set; }

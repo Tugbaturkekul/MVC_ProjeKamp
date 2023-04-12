@@ -1,10 +1,11 @@
 ﻿@using EntityLayer.Concrete
 @model List<Message>
-@{
-    ViewBag.Title = "Sendbox";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
-}
 
+@{
+    ViewBag.Title = "Inbox";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+@{ string renk = "";}
 <html>
 
 <body class="hold-transition sidebar-mini">
@@ -23,12 +24,12 @@
     <!-- Main content -->
     <section class="content">
         <div class="row">
-            @Html.Action("ContactPartial", "Contact")
+            @Html.Action("MessageListMenu","WriterPanelMessage")
             <!-- /.col -->
             <div class="col-md-9">
                 <div class="card card-primary card-outline">
                     <div class="card-header">
-                        <h3 class="card-title">Gönderilen Mesajlar</h3>
+                        <h3 class="card-title">Gelen Mesajlar</h3>
                         <div class="card-tools">
                             <div class="input-group input-group-sm">
                                 <input type="text" class="form-control" placeholder="Mail Kutusunda Ara">
@@ -70,6 +71,7 @@
                                 <tbody>
                                     @foreach (var item in Model)
                                     {
+                                        renk = (!item.IsRead) ? "warning" : "capitalize";
                                         <tr>
                                             <td>
                                                 <div class="icheck-primary">
@@ -77,8 +79,8 @@
                                                     <label for="check1"></label>
                                                 </div>
                                             </td>
-                                            <td class="mailbox-star"><a href="/Message/GetSendboxMessageDetail/@item.MessageID"><i class="fas fa-star text-warning"></i></a></td>
-                                            <td class="mailbox-name"><a href="/Message/GetSendboxMessageDetail/@item.MessageID">@item.ReceiverMail</a></td>
+                                            <td class="mailbox-star"><a href="/WriterPanelMessage/GetInboxMessageDetail/@item.MessageID"><i class="fas fa-star text-warning"></i></a></td>
+                                            <td class="mailbox-name"><a href="/WriterPanelMessage/GetInboxMessageDetail/@item.MessageID">@item.SenderMail</a></td>
                                             <td class="mailbox-subject">
                                                 <b>@item.Subject</b> -
                                                 @if (item.MessageContent.Length > 30)
@@ -89,9 +91,12 @@
                                                 {
                                                     @item.MessageContent
                                                 }
+                                                ...
                                             </td>
-                                            <td class="mailbox-attachment"></td>
-                                            <td class="mailbox-date"> @(((DateTime)item.MessageDate).ToString("dd-MMM-yyyy"))</td>
+                                            <td class="mailbox-attachment">
+                                                <a class="btn btn-default btn-sm" href="/Message/IsRead/@item.MessageID"><i class="fas fa-mail-bulk text-@renk"></i></a>
+                                            </td>
+                                            <td class="mailbox-date">  @(((DateTime)item.MessageDate).ToString("dd-MMM-yyyy"))</td>
                                         </tr>
                                     }
                                 </tbody>
@@ -135,3 +140,5 @@
 
 </body>
 </html>
+
+

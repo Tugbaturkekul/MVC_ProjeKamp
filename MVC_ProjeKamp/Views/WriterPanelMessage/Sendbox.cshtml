@@ -2,8 +2,9 @@
 @model List<Message>
 @{
     ViewBag.Title = "Sendbox";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
 }
+
 
 <html>
 
@@ -23,7 +24,7 @@
     <!-- Main content -->
     <section class="content">
         <div class="row">
-            @Html.Action("ContactPartial", "Contact")
+            @Html.Action("MessageListMenu", "WriterPanelMessage")
             <!-- /.col -->
             <div class="col-md-9">
                 <div class="card card-primary card-outline">
@@ -77,10 +78,10 @@
                                                     <label for="check1"></label>
                                                 </div>
                                             </td>
-                                            <td class="mailbox-star"><a href="/Message/GetSendboxMessageDetail/@item.MessageID"><i class="fas fa-star text-warning"></i></a></td>
-                                            <td class="mailbox-name"><a href="/Message/GetSendboxMessageDetail/@item.MessageID">@item.ReceiverMail</a></td>
+                                            <td class="mailbox-star"><a href="/WriterPanelMessage/GetSendboxMessageDetail/@item.MessageID"><i class="fas fa-star text-warning"></i></a></td>
+                                            <td class="mailbox-name"><a href="/WriterPanelMessage/GetSendboxMessageDetail/@item.MessageID">@item.ReceiverMail</a></td>
                                             <td class="mailbox-subject">
-                                                <b>@item.Subject</b> -
+                                                 <b>@item.Subject</b> -
                                                 @if (item.MessageContent.Length > 30)
                                                 {
                                                     @item.MessageContent.Substring(0, 30)

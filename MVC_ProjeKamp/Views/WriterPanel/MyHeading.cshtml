@@ -6,9 +6,7 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_WriterLayout.cshtml";
 }
-@{ string color = "";
-    string colorSilButon = "";
-    string durumSilButon = "";}
+@{ string color = "";}
 
 <!DOCTYPE html>
 <html>
@@ -90,18 +88,7 @@
                             {
                                 color = "badge badge-danger";
                             }
-                            if (item.HeadingStatus == false)
-                            {
-                                durumSilButon = "Aktif Yap";
-                                colorSilButon = "btn btn-secondary";
-
-                            }
-                            else
-                            {
-                                durumSilButon = "Pasif Yap";
-                                colorSilButon = "btn btn-danger";
-
-                            }
+                            
                             <tr>
                                 <td>
                                     @item.HeadingID
@@ -137,10 +124,10 @@
                                         </i>
                                         Düzenle
                                     </a>
-                                    <a class="@colorSilButon btn-sm" href="/WriterPanel/DeleteHeading/@item.HeadingID">
+                                    <a class="btn btn-danger btn-sm" href="/WriterPanel/DeleteHeading/@item.HeadingID">
                                         <i class="fas fa-trash">
                                         </i>
-                                        @durumSilButon
+                                       Sil
                                     </a>
                                 </td>
                             </tr>

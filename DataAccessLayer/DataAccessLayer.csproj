@@ -152,6 +152,14 @@
     <Compile Include="Migrations\202304100455262_rm_isread_contact.designer.cs">
       <DependentUpon>202304100455262_rm_isread_contact.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202304120344389_allowhtml_for_messagecontent.cs" />
+    <Compile Include="Migrations\202304120344389_allowhtml_for_messagecontent.designer.cs">
+      <DependentUpon>202304120344389_allowhtml_for_messagecontent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304120351284_remove_allowhtml_for_messagecontent.cs" />
+    <Compile Include="Migrations\202304120351284_remove_allowhtml_for_messagecontent.designer.cs">
+      <DependentUpon>202304120351284_remove_allowhtml_for_messagecontent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -225,6 +233,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202304100455262_rm_isread_contact.resx">
       <DependentUpon>202304100455262_rm_isread_contact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304120344389_allowhtml_for_messagecontent.resx">
+      <DependentUpon>202304120344389_allowhtml_for_messagecontent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304120351284_remove_allowhtml_for_messagecontent.resx">
+      <DependentUpon>202304120351284_remove_allowhtml_for_messagecontent.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
