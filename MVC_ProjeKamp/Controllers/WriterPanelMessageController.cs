@@ -13,6 +13,7 @@ namespace MVC_ProjeKamp.Controllers
 {
     public class WriterPanelMessageController : Controller
     {
+    
         MessageManager mm = new MessageManager(new EfMessageDal());
         MessageValidator messageValidator = new MessageValidator();
         public ActionResult Inbox()
@@ -74,6 +75,8 @@ namespace MVC_ProjeKamp.Controllers
             }
             return View();
         }
+       
+        
         public ActionResult IsRead(int id)
         {
             //okundu butonunu true/false yaparak vt a kaydeder
@@ -85,6 +88,7 @@ namespace MVC_ProjeKamp.Controllers
             mm.MessageUpdate(messagevalue);
             return RedirectToAction("Inbox");
         }
+        
     }
 }
    
