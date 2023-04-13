@@ -7,6 +7,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PagedList; //paging
+using PagedList.Mvc; //paging
 
 namespace MVC_ProjeKamp.Controllers
 {
@@ -28,9 +30,11 @@ namespace MVC_ProjeKamp.Controllers
             var values = hm.GetListByWriter(writeridinfo);
             return View(values);
         }
-        public ActionResult AllHeading()
+        //paging işlemi
+        //proje referanslar-sağ tık-nuget paketlerini yönet
+        public ActionResult AllHeading(int p=1)
         {
-            var headings = hm.GetList();
+            var headings = hm.GetList().ToPagedList(p,4);
             return View(headings);
         }
         [HttpGet]
