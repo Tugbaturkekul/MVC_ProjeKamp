@@ -17,10 +17,10 @@ namespace MVC_ProjeKamp.Controllers
         MessageValidator messageValidator = new MessageValidator();
 
         [Authorize]
-        public ActionResult Inbox()
+        public ActionResult Inbox(string p)
         {
-            string adminusername = (string)Session["AdminUserName"];
-            var messagelist = mm.GetListInbox(adminusername);
+
+            var messagelist = mm.GetListInbox(p);
             return View(messagelist);
         }
         public ActionResult Sendbox(string p)
