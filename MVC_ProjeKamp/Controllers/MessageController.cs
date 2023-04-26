@@ -13,25 +13,31 @@ namespace MVC_ProjeKamp.Controllers
 {
     public class MessageController : Controller
     {
-        MessageManager mm= new MessageManager(new EfMessageDal());
+        MessageManager mm = new MessageManager(new EfMessageDal());
         MessageValidator messageValidator = new MessageValidator();
-       
+
         [Authorize]
-        public ActionResult Inbox()
+        public ActionResult Inbox(string p)
         {
 
-            var messagelist = mm.GetListInbox();
+            var messagelist = mm.GetListInbox(p);
             return View(messagelist);
         }
-        public ActionResult Sendbox()
+        public ActionResult Sendbox(string p)
         {
-            var messagelist = mm.GetListSendbox();
+            var messagelist = mm.GetListSendbox(p);
             return View(messagelist);
         }
 
         public ActionResult GetInboxMessageDetail(int id)
         {
+            
             var values = mm.GetByID(id);
+            if(!values.IsRead)
+            {
+                values.IsRead = true;
+                mm.MessageUpdate(values);
+            }
             return View(values);
         }
         public ActionResult GetSendboxMessageDetail(int id)
@@ -63,6 +69,17 @@ namespace MVC_ProjeKamp.Controllers
                 }
             }
             return View();
+        }
+        public ActionResult IsRead(int id)
+        {
+            //okundu butonunu true/false yaparak vt a kaydeder
+            var messagevalue = mm.GetByID(id);
+            if (messagevalue.IsRead)
+                messagevalue.IsRead = false;
+            else
+                messagevalue.IsRead = true;
+            mm.MessageUpdate(messagevalue);
+            return RedirectToAction("Inbox");
         }
     }
 }

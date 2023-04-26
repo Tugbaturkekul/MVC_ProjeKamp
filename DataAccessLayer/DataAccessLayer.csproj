@@ -132,6 +132,34 @@
     <Compile Include="Migrations\202304071857095_mig_addedability.designer.cs">
       <DependentUpon>202304071857095_mig_addedability.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202304081432492_mig_message_isread_Added.cs" />
+    <Compile Include="Migrations\202304081432492_mig_message_isread_Added.designer.cs">
+      <DependentUpon>202304081432492_mig_message_isread_Added.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304090842090_mig_messageIsread.cs" />
+    <Compile Include="Migrations\202304090842090_mig_messageIsread.designer.cs">
+      <DependentUpon>202304090842090_mig_messageIsread.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304090942539_isread_added.cs" />
+    <Compile Include="Migrations\202304090942539_isread_added.designer.cs">
+      <DependentUpon>202304090942539_isread_added.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304100335471_contact_added_isread.cs" />
+    <Compile Include="Migrations\202304100335471_contact_added_isread.designer.cs">
+      <DependentUpon>202304100335471_contact_added_isread.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304100455262_rm_isread_contact.cs" />
+    <Compile Include="Migrations\202304100455262_rm_isread_contact.designer.cs">
+      <DependentUpon>202304100455262_rm_isread_contact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304120344389_allowhtml_for_messagecontent.cs" />
+    <Compile Include="Migrations\202304120344389_allowhtml_for_messagecontent.designer.cs">
+      <DependentUpon>202304120344389_allowhtml_for_messagecontent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304120351284_remove_allowhtml_for_messagecontent.cs" />
+    <Compile Include="Migrations\202304120351284_remove_allowhtml_for_messagecontent.designer.cs">
+      <DependentUpon>202304120351284_remove_allowhtml_for_messagecontent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -190,6 +218,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202304071857095_mig_addedability.resx">
       <DependentUpon>202304071857095_mig_addedability.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304081432492_mig_message_isread_Added.resx">
+      <DependentUpon>202304081432492_mig_message_isread_Added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304090842090_mig_messageIsread.resx">
+      <DependentUpon>202304090842090_mig_messageIsread.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304090942539_isread_added.resx">
+      <DependentUpon>202304090942539_isread_added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304100335471_contact_added_isread.resx">
+      <DependentUpon>202304100335471_contact_added_isread.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304100455262_rm_isread_contact.resx">
+      <DependentUpon>202304100455262_rm_isread_contact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304120344389_allowhtml_for_messagecontent.resx">
+      <DependentUpon>202304120344389_allowhtml_for_messagecontent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304120351284_remove_allowhtml_for_messagecontent.resx">
+      <DependentUpon>202304120351284_remove_allowhtml_for_messagecontent.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
